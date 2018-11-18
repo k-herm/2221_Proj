@@ -1,0 +1,30 @@
+<style>
+
+nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav > ul > li {
+    border: 1px black solid;
+    padding: 1em;
+}
+
+.cells {
+    display: none;
+}
+
+.delivery {
+    display: none;
+}
+
+.visitor {
+    display: none;
+}
+
+.inmate {
+    display: none;
+}
+
+</style>

@@ -1,0 +1,7 @@
+<!--
+    variables:
+
+    inmateName
+    inmateID
+
+-->

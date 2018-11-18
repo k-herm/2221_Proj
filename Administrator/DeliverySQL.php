@@ -1,0 +1,6 @@
+<!--
+    variables:
+
+    deliveryName
+    deliveryID
+-->
