@@ -5,22 +5,22 @@ $(document).ready(function() {
 function addNavButtons() {
     $('#navCell').click(function() {
         clearTab();
-        $('.cells').css('display', 'block');
+        $('.cells').css('display', 'grid');
     });
 
     $('#navDelivery').click(function() {
         clearTab();
-        $('.delivery').css('display', 'block');
+        $('.delivery').css('display', 'grid');
     });
 
     $('#navVisitor').click(function() {
         clearTab();
-        $('.visitor').css('display', 'block');
+        $('.visitor').css('display', 'grid');
     });
 
     $('#navInmate').click(function() {
         clearTab();
-        $('.inmate').css('display', 'block');
+        $('.inmate').css('display', 'grid');
     });
 }
 

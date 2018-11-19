@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include('../style.css'); ?>
+    <link rel="stylesheet" href="./../style.css">
     <title>Federal Department of Justice</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <?php require '../templates/header.php'?>
-
+    <?php include('./../templates/header.php'); ?>
     <main>
         <div class="filters">
-            <h3>Filters</h3>
-
-            <label for="inmateID">ID:</label>
+            <label for="inmateID">Inmate ID:</label>
             <input id="iid" type="text" name="inmateID">
             <label for="inmateName">Inmate Name:</label>
             <input id="iname" type="text" name="inmateName">
@@ -31,7 +28,7 @@
         </div>
     </main>
 
-    <?php require '../templates/footer.php'?>
+    <?php include('./../templates/footer.php'); ?>
 </body>
 </html>
 

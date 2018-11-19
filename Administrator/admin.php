@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include('../style.css'); ?>
+    <link rel="stylesheet" href="./../style.css">
     <title>Federal Department of Justice</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./admin.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <?php require '../templates/header.php'?>
-
-    <nav>
-        <ul>
-            <li id='navCell'>Prison Cells</li>
-            <li id='navDelivery'>Shipping Management</li>
-            <li id='navVisitor'>Visitor Info</li>
-            <li id='navInmate'>Inmate Info</li>
-        </ul>
-    </nav>
-
+    <?php include('./../templates/header.php'); ?>
     <main>
+        <nav>
+            <ul>
+                <li id='navCell'>Prison Cells</li>
+                <li id='navDelivery'>Shipping Management</li>
+                <li id='navVisitor'>Visitor Info</li>
+                <li id='navInmate'>Inmate Info</li>
+            </ul>
+        </nav>
+
         <div class="cells">
             <input id="cSearchButton" type="button" value="Show All">
 
@@ -68,6 +67,6 @@
         </div>
     </main>
 
-    <?php require '../templates/footer.php'?>
+    <?php include('./../templates/footer.php'); ?>
 </body>
 </html>
