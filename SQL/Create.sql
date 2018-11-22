@@ -141,7 +141,11 @@ INSERT INTO Cell (Cell_id, max_occupants, location)
 VALUES(3146, 2, 'A-Block'),
 (2628, 2, 'A-Block'),
 (2137, 2, 'B-Block'),
+(2567, 2, 'B-Block'),
+(2548, 2, 'B-Block'),
 (5551, 1, 'C-Block'),
+(5931, 1, 'C-Block'),
+(5822, 1, 'C-Block'),
 (7050, 1, 'Iso-Block');
 
 INSERT INTO Inmate (Inmate_ID, employee_id, cell_Id, name, security_level, age, sex, crime, parole_date)
