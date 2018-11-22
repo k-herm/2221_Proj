@@ -54,12 +54,17 @@
         </div>
 
         <div class="inmate">
-            <label for="inmateID">Inmate ID:</label>
-            <input id="iid" type="text" name="inmateID">
-            <label for="inmateName">Inmate Name:</label>
-            <input id="iname" type="text" name="inmateName">
+            <body>
+                <form action="InmateSQL.php" method="post">
+                    <label for="inmateID">Inmate ID:</label>
+                    <input id="iid" type="number" name="inmateID">
+                    <br><br>
+                    <label for="inmateName">Inmate Name:</label>
+                    <input id="iname" type="text" name="inmateName">
 
-            <input id="iSearchButton" type="button" value="Search">
+                    <input id="iSearchButton" type="button" value="Search">
+                </form>
+            </body>
         </div>
 
         <div class="results">
