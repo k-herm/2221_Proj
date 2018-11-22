@@ -9,7 +9,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "Lostsdjl++?";
+	$password = "";
 	$dbname = "prison";
 
 	$InmateID=$_POST['inmateID'];
@@ -25,7 +25,7 @@
 		echo "Connection Successful";
 	}
 
-	//construct query
+	//construct query aaaaaaaa
 	$query = "SELECT * FROM inmate WHERE name = '$InmateName'";
 	$result = $conn->query($query);
 
