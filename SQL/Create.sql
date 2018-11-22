@@ -132,8 +132,10 @@ INSERT INTO guards(Employee_ID, Name, Address, Age, Sex, Phone_number, Rank)
 VALUES(637, 'Brianna Kieron', '5549 Thornton Street', 32, 'F', '232 525-6578', 'Sergeant'),
 (4686, 'Judd Tommy', '1001 Arkansas Lane', 48, 'M', '232 677-1892', 'Warden' ),
 (5283, 'Elijah Evaline', '104 Washington Street', 27, 'M', '232 646-3324', 'Officer'),
+(7167, 'Matt Lopez', '632 Yellow Drive', 22, 'M', '232 646-9522', 'Officer'),
 (7009, 'John Hendricks', '88 Chestnut Street', 36, 'M', '232 986-7431', 'Captain'),
 (8053, 'Kiley Cybill', '9931 Royce Drive', 29, 'F', '232 357-9658', 'Lieutenant');
+(8057, 'Kiarash Kianpoor', '1010 Fall st.', 32, 'M', '232 467-7788', 'Lieutenant');
 
 INSERT INTO Cell (Cell_id, max_occupants, location)
 VALUES(3146, 2, 'A-Block'),
