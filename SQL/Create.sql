@@ -153,6 +153,7 @@ VALUES(01911, 5283, 3146, 'Avalon Piers', 'Minimum', 22, 'M', 'Vandalism', '2018
 (1400, 637, 2628, 'Salome Clyde', 'Low', 29, 'F', 'Breaking and Entering', '2019-06-06'),
 (8603, 8053, 2137, 'Hope Bobby', 'Medium', 58, 'F', 'Possession with Intent to sell', '2019-11-05'),
 (6945, 7009, 5551, 'Roselyn Ned', 'High', 36, 'F', 'Assault with a Deadly Weapon', '2021-03-21'),
+(6951, 7167, 2548, 'Nad Farhadi', 'Medium', 46, 'M', 'Tax Fraud', '2019-08-15'),
 (151, 4686, 7050, 'Terence Abraham', 'Unclassified', 52, 'M', '1st Degree Murder', '2033-04-18');
 
 INSERT INTO administrator(employee_id, name, address, age, sex, phone_number)
