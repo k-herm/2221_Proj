@@ -54,20 +54,10 @@
         </div>
 
         <div class="inmate">
-<<<<<<< HEAD
             <label for="inmateID">Inmate ID:</label>
             <input id="idi" type="text" name="inmateID">
             <label for="inmateName">Inmate Name:</label>
             <input id="namei" type="text" name="inmateName">
-=======
-            <body>
-                <form action="InmateSQL.php" method="post">
-                    <label for="inmateID">Inmate ID:</label>
-                    <input id="iid" type="number" name="inmateID">
-                    <br><br>
-                    <label for="inmateName">Inmate Name:</label>
-                    <input id="iname" type="text" name="inmateName">
->>>>>>> 3f806ced9d1c6d13aca94b5288113e878334d695
 
                     <input id="iSearchButton" type="button" value="Search">
                 </form>
