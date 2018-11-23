@@ -32,8 +32,8 @@ function clearTab() {
 }
 
 $('#vSearchButton').click(function() {
-    let iid = $('#iid').val();
-    let iname = $('#iname').val();
+    let iid = $('#idv').val();
+    let iname = $('#namev').val();
     let vid = $('#vid').val();
     let vname = $('#vname').val();
     let vdate = $('#vdate').val();
@@ -55,8 +55,8 @@ $('#vSearchButton').click(function() {
 });
 
 $('#iSearchButton').click(function() {
-    let iid = $('#iid').val();
-    let iname = $('#iname').val();
+    let iid = $('#idi').val();
+    let iname = $('#namei').val();
 
     $.ajax({
         method: "POST",

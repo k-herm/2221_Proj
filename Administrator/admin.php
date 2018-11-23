@@ -38,9 +38,9 @@
 
         <div class="visitor">
             <label for="inmateID">Inmate ID:</label>
-            <input id="iid" type="text" name="inmateID">
+            <input id="idv" type="text" name="inmateID">
             <label for="inmateName">Inmate Name:</label>
-            <input id="iname" type="text" name="inmateName">
+            <input id="namev" type="text" name="inmateName">
 
             <label for="visitorID">Visitor ID:</label>
             <input id="vid" type="text" name="visitorID">
@@ -55,9 +55,9 @@
 
         <div class="inmate">
             <label for="inmateID">Inmate ID:</label>
-            <input id="iid" type="text" name="inmateID">
+            <input id="idi" type="text" name="inmateID">
             <label for="inmateName">Inmate Name:</label>
-            <input id="iname" type="text" name="inmateName">
+            <input id="namei" type="text" name="inmateName">
 
             <input id="iSearchButton" type="button" value="Search">
         </div>
