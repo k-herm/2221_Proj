@@ -9,6 +9,9 @@
 -->
 
 <?php
+       //HOW CAN I CHECK TO DO DIFFERENT THING IF THE PERSON CKLICKS ON CURRENT STAT ?
+
+
 	require_once '../helperFunctions.php';
     $conn = connectToDatabase();
 
