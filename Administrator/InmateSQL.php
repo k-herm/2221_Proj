@@ -9,7 +9,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "Lostsdjl++?";
+	$password = "";
 	$dbname = "prison";
 
 	$InmateID=$_POST['inmateID'];
