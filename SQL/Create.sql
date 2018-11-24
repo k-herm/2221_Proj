@@ -151,7 +151,7 @@ VALUES(3146, 2, 'A-Block'),
 INSERT INTO Inmate (Inmate_ID, employee_id, cell_Id, name, security_level, age, sex, crime, parole_date)
 VALUES(01911, 5283, 3146, 'Avalon Piers', 'Minimum', 22, 'M', 'Vandalism', '2018-12-02'),
 (1400, 637, 2628, 'Salome Clyde', 'Low', 29, 'F', 'Breaking and Entering', '2019-06-06'),
-(1500, 637, 2628, 'Jenifer Damon', 'Low', 25, 'F', 'Shop Lifting', '2019-05-27'),
+(1500, 637, 2628, 'Jennifer Damon', 'Low', 25, 'F', 'Shop Lifting', '2019-05-27'),
 (8603, 8053, 2137, 'Hope Bobby', 'Medium', 58, 'F', 'Possession with Intent to sell', '2019-11-05'),
 (8624, 8057, 2567, 'Edwin Snowman', 'Medium', 25, 'M', 'Stealing Bank Information Online', '2020-01-11'),
 (6945, 7009, 5551, 'Roselyn Ned', 'High', 36, 'F', 'Assault with a Deadly Weapon', '2021-03-21'),
