@@ -1,0 +1,2 @@
+InmateSQL- Selection Query
+SELECT * FROM inmate WHERE name = '$InmateName' AND Inmate_ID = '$InmateID'
