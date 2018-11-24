@@ -59,8 +59,7 @@
             <label for="inmateName">Inmate Name:</label>
             <input id="namei" type="text" name="inmateName">
 
-                    <input id="iSearchButton" type="button" value="Search">
-                </form>
+            <input id="iSearchButton" type="button" value="Search">
             </body>
         </div>
 
