@@ -7,17 +7,13 @@
 -->
 
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "prison";
+	require_once '../helperFunctions.php';
+    $conn = connectToDatabase();
 
 	$InmateID=$_POST['inmateID'];
     $InmateName=$_POST['inmateName'];
 
     echo $InmateName;
-	//create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
 
 	//Checking connection
 	if($conn->connect_error){
