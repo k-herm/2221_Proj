@@ -9,12 +9,13 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "Lostsdjl++?";
 	$dbname = "prison";
 
 	$InmateID=$_POST['inmateID'];
     $InmateName=$_POST['inmateName'];
 
+    echo $InmateName;
 	//create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 
