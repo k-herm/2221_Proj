@@ -13,8 +13,6 @@
 	$InmateID=$_POST['inmateID'];
     $InmateName=$_POST['inmateName'];
 
-    echo $InmateName;
-
 	//Checking connection
 	if($conn->connect_error){
 		die("Connection failed: ". $conn->connecte_error);
@@ -22,8 +20,8 @@
 		echo "Connection Successful";
 	}
 
-	//construct query aaaaaaaa
-	$query = "SELECT * FROM inmate WHERE name = '$InmateName'";
+	//construct query
+	$query = "SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'";
 	$result = $conn->query($query);
 
 	//Execute query
