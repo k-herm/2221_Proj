@@ -179,7 +179,18 @@ VALUES (55748, 'Willard Piers', 'Father', 1911),
 (224131, 'Blake Tye', 'Significant Other', 1400),
 (626061, 'Kaylie Camille', 'Niece', 8603),
 (641821, 'Sharla Krystal', 'Acquaintance', 8603),
-(347895, 'Geneva Winter', 'Lawyer', 151);
+(347895, 'Geneva Winter', 'Lawyer', 151),
+(257742, 'Saul Goodman', 'Lawyer', 151),
+(257743, 'Saul Goodman', 'Lawyer',01911),
+(257744, 'Saul Goodman', 'Lawyer',1400),
+(257745, 'Saul Goodman', 'Lawyer',1500),
+(257746, 'Saul Goodman', 'Lawyer',8603),
+(257747, 'Saul Goodman', 'Lawyer',8624),
+(257748, 'Saul Goodman', 'Lawyer',6945),
+(257749, 'Saul Goodman', 'Lawyer',6951),
+(257750, 'Saul Goodman', 'Lawyer',6273),
+(257751, 'Saul Goodman', 'Lawyer',4798);
+
 
 INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Date, Time_In, Time_Out)
 VALUES(55748, 9944, '2018-10-21', '16:15:21', '16:50:43'),
