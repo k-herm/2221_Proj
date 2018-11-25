@@ -5,7 +5,7 @@ $(document).ready(function() {
 function addNavButtons() {
     $('#navCell').click(function() {
         clearTab();
-        $('.cells').css('display', 'grid');
+        $('.cells').css('display', 'flex');
     });
 
     $('#navDelivery').click(function() {

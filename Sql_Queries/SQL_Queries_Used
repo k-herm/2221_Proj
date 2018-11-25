@@ -3,6 +3,7 @@ SELECT Inmate_ID, Name, Age, Sex FROM inmate
 
 InmateSQL- Selection Query
 SELECT * FROM inmate WHERE name = '$InmateName' AND Inmate_ID = '$InmateID'
+SELECT * FROM inmate WHERE Inmate_ID = $id
 
 VisitorsSQL-  Join query
 SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, v.Relationship, vl.Date, vl.Time_in, vl.Time_out

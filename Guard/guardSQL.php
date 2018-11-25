@@ -16,11 +16,11 @@ $result = $conn->query($query);
 
 //echo all inmates with links
 if($result->num_rows > 0){
-	echo "<table align=\"center\"border= \"1\">";
-	echo "<tr><th> ID</th><th> NAME</th><th> AGE</th><th> SEX </th></tr>"; 
+	echo "<table border= \"1\">";
+	echo "<tr><th> ID</th><th> NAME</th><th> AGE</th><th> SEX </th></tr>";
 	while($row = $result->fetch_assoc()){
 		$link = $row["Inmate_ID"];
-		echo "<tr><td><a href=http://localhost/2221_Proj-master/templates/inmateProfile.php>$link</a></td>";
+		echo "<tr><td><a href='./inmateProfile.php?login&id=$link'>$link</a></td>";
 		echo "<td>". $row["Name"]. "</td><td>". $row["Age"]. "</td><td>". $row["Sex"]. "</td></tr>";
 	}
 }
@@ -32,7 +32,7 @@ clearConnection($conn);
 
 //search for inmates
 $searchParam = 0;
-$id = ''; 
+$id = '';
 $name='';
 $paroleDate='';
 if(!empty($_POST['inmateID'])) {
@@ -92,8 +92,8 @@ switch($searchParam){
 if($result->num_rows > 0){
 	while($row = $result->fetch_assoc()){
 	$link = $row["Inmate_ID"];
-	echo "<br><a href=http://localhost/2221_Proj-master/templates/inmateProfile.php>$link</a>";
-	echo "\t". $row["Name"]. "\t". $row["Age"]. "\t". $row["Sex"]. "<br>";
+	echo "<p><a href='./inmateProfile.php?login&id=$link'>$link</a>";
+	echo "\t". $row["Name"]. "\t". $row["Age"]. "\t". $row["Sex"]. "</p>";
 	}
 }
 else{

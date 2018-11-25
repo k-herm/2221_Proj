@@ -26,7 +26,9 @@
             <input id="loginButton" name="submit" type="submit" value="Login">
         </form>
     </main>
-    <?php include('./templates/footer.php'); ?>
+    <footer>
+        <p>Photo by Tyler Rutherford on Unsplash</p>
+    </footer>
 </body>
 </html>
 

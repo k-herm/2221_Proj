@@ -5,7 +5,7 @@ body {
     background-position: center;
 
     display: grid;
-    grid-template-rows: 0.15fr 1fr 0.1fr;
+    grid-template-rows: 0.15fr 1fr;
     height: 100vh;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -123,16 +123,21 @@ nav > ul > li:hover {
     text-decoration-line: underline;
 }
 
-.cells, .delivery, .visitor, .inmate, .filters {
+.delivery, .visitor, .inmate, .filters {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 5px;
     padding: 1em 1em;
     margin-right: 6em;
 }
+.cells {
+    display: flex;
+    justify-content: center;
+}
 .cells, .delivery, .visitor, .inmate {
     display: none;
 }
+#cSearchButton { padding: 0.5em 1em; }
 input[type="button"], button {
     grid-column: 2 / -1;
     font-size: 1.1em;
@@ -147,7 +152,35 @@ label {
     justify-self: right;
 }
 
+
 .results {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.inmateProfile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#profilePic {
+    width: 100%;
+}
+.inmateInfo {
+    justify-self: center;
+}
+.inmateInfo > table > tbody > tr > td, td, th{
+    padding: 0.5em;
+    /* font-size: 1.1em; */
+}
+.inmateInfo > table {
+    border: none;
+}
+
+table, th {
+    border: 1px solid black;
+}
+th {
+    background-color: white;
 }

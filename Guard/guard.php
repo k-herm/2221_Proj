@@ -24,11 +24,9 @@
         </div>
 
         <div class="results">
-            <?php require './guardSQL.php' ?>
+            <?php include('./guardSQL.php'); ?>
         </div>
     </main>
-
-    <?php include('./../templates/footer.php'); ?>
 </body>
 </html>
 
