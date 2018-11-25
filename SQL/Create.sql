@@ -130,6 +130,21 @@ CREATE TABLE Distributor_of (
             ON UPDATE CASCADE
 );
 
+CREATE TABLE Admin_Login(
+    Login_Pass CHAR(5) PRIMARY KEY,
+    Username CHAR(30),
+    Employee_ID INTEGER,
+    FOREIGN KEY (Employee_ID) REFERENCES administrator(Employee_ID)
+    );
+
+CREATE TABLE Guard_Login(
+    Login_Pass CHAR(5) PRIMARY KEY,
+    Username CHAR(30),
+    Employee_ID INTEGER,
+    FOREIGN KEY (Employee_ID) REFERENCES guards(Employee_ID)
+    );
+
+
 INSERT INTO rank_clearance (rank, clearance_level)
 VALUES('Officer', 'Minimum'),
 ('Sergeant', 'Low'),
@@ -237,6 +252,21 @@ VALUES(559615, 4677, '2018-10-22', 'Melanie Niall', '08:15:00', '08:45:00'),
 (146215, 3030, '2018-10-17', 'July Kevan', '06:02:12', '07:01:23'),
 (732672, 9318, '2018-10-01', 'Roselyn Carmelo', '17:21:39', '18:08:46');
 
+INSERT INTO guard_login(login_pass, username, Employee_ID)
+VALUES(25564, 'b.kieran', 637),
+(62745, 'j.tommy', 4686),
+(28326, 'e.evaline', 5283),
+(61132, 'j.hendricks', 7009),
+(11485, 'm.lopez', 7167),
+(20603, 'k.cybil', 8053);
+
+INSERT INTO admin_login(login_pass, username, Employee_ID)
+VALUES(99181, 'r.truman', 3030),
+(26356, 'd.vera', 4677),
+(53573, 'm.cuthbert', 7027),
+(56762, 'h.lester', 9318),
+(55161, 'w.landford', 9944),
+(67568, 'k.kianpoor', 8057);
 
 
 
