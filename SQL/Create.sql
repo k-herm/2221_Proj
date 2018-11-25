@@ -68,10 +68,19 @@ CREATE TABLE Therapist_Analysis (
 CREATE TABLE Visitor (
 	Visitor_ID INTEGER,
 	Name char(50) NOT NULL,
-	Relationship char(20),
-    Inmate_ID INTEGER NOT NULL,
-	PRIMARY KEY (Visitor_ID),
-    FOREIGN KEY (Inmate_ID) references Inmate(Inmate_ID)
+	PRIMARY KEY (Visitor_ID)
+);
+
+CREATE Table Visits (
+    Visitor_ID INTEGER,
+    Inmate_ID INTEGER,
+    Relationship char(20),
+    PRIMARY KEY (Visitor_ID, Inmate_ID),
+    FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    FOREIGN KEY (Inmate_ID) references Inmate(inmate_id)
+            ON DELETE CASCADE
             ON UPDATE CASCADE
 );
 
@@ -174,22 +183,30 @@ VALUES(145700, 151, 'Rosanne Vin', '2018-10-22'),
 (679080, 6945, 'Lisa Porter', '2018-10-19'),
 (237900, 6945, 'Lisa Porter', '2018-09-21');
 
-INSERT INTO Visitor(visitor_id, name, relationship, inmate_id)
-VALUES (55748, 'Willard Piers', 'Father', 1911),
-(224131, 'Blake Tye', 'Significant Other', 1400),
-(626061, 'Kaylie Camille', 'Niece', 8603),
-(641821, 'Sharla Krystal', 'Acquaintance', 8603),
-(347895, 'Geneva Winter', 'Lawyer', 151),
-(257742, 'Saul Goodman', 'Lawyer', 151),
-(257743, 'Saul Goodman', 'Lawyer',01911),
-(257744, 'Saul Goodman', 'Lawyer',1400),
-(257745, 'Saul Goodman', 'Lawyer',1500),
-(257746, 'Saul Goodman', 'Lawyer',8603),
-(257747, 'Saul Goodman', 'Lawyer',8624),
-(257748, 'Saul Goodman', 'Lawyer',6945),
-(257749, 'Saul Goodman', 'Lawyer',6951),
-(257750, 'Saul Goodman', 'Lawyer',6273),
-(257751, 'Saul Goodman', 'Lawyer',4798);
+INSERT INTO Visitor(visitor_id, name)
+VALUES (55748, 'Willard Piers'),
+(224131, 'Blake Tye'),
+(626061, 'Kaylie Camille'),
+(641821, 'Sharla Krystal'),
+(347895, 'Geneva Winter'),
+(257742, 'Saul Goodman');
+
+INSERT INTO Visits(Visitor_ID, Inmate_ID, Relationship)
+VALUES(55748, 1911, 'Father'),
+(224131, 1400, 'Significant Other'),
+(626061, 8603, 'Niece'),
+(641821, 8603, 'Acquaintance'),
+(347895, 151, 'Lawyer'),
+(257742, 151, 'Lawyer'),
+(257742, 01911, 'Lawyer'),
+(257742, 1400, 'Lawyer'),
+(257742, 1500, 'Lawyer'),
+(257742, 8603, 'Lawyer'),
+(257742, 8624, 'Lawyer'),
+(257742, 6945, 'Lawyer'),
+(257742, 6951, 'Lawyer'),
+(257742, 6273, 'Lawyer'),
+(257742, 4798, 'Lawyer');
 
 
 INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Date, Time_In, Time_Out)
