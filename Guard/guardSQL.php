@@ -16,11 +16,12 @@ $result = $conn->query($query);
 
 //echo all inmates with links
 if($result->num_rows > 0){
-	echo "<br> ID". "\t NAME". "\t AGE". "\t SEX <br>"; 
+	echo "<table align=\"center\"border= \"1\">";
+	echo "<tr><th> ID</th><th> NAME</th><th> AGE</th><th> SEX </th></tr>"; 
 	while($row = $result->fetch_assoc()){
 		$link = $row["Inmate_ID"];
-		echo "<a href=http://localhost/2221_Proj-master/templates/inmateProfile.php>$link</a>";
-		echo "\t". $row["Name"]. "\t". $row["Age"]. "\t". $row["Sex"]. "<br>";
+		echo "<tr><td><a href=http://localhost/2221_Proj-master/templates/inmateProfile.php>$link</a></td>";
+		echo "<td>". $row["Name"]. "</td><td>". $row["Age"]. "</td><td>". $row["Sex"]. "</td></tr>";
 	}
 }
 else{
@@ -47,6 +48,7 @@ if(!empty($_POST['paroleDate'])){
 	$paroleDate = $_POST['paroleDate'];
 	$searchParam += 4;
 }
+
 
 switch($searchParam){
 	//just ID
