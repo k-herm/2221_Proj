@@ -25,7 +25,7 @@
 	//Execute query
 	if($result->num_rows > 0){
 
-		echo "<h1>Visitors based on this search are: </h1>";
+		echo "<h1>Inmates based on this search are: </h1>";
         echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Inmate_ID</th><th>Inmate_Name</th><th>Security_Level</th></tr>";
         // output data for each row
