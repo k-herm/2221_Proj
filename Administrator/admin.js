@@ -29,6 +29,7 @@ function clearTab() {
     $('.cells').css('display', 'none');
     $('.inmate').css('display', 'none');
     $('.visitor').css('display', 'none');
+    $('.results').html('');
 }
 
 $('#vSearchButton').click(function() {
@@ -91,6 +92,34 @@ $('#dSearchButton').click(function() {
 $('#cSearchButton').click(function() {
     $.ajax({
         url: 'CellSQL.php',
+        success: function(html) {
+            $('.results').html(html);
+        }
+    });
+});
+
+$('#vStatsButton').click(function() {
+    let stat = 'vstat';
+    $.ajax({
+        method: "GET",
+        url: 'VisitorsSQL.php',
+        data: {
+            stats: stat
+        },
+        success: function(html) {
+            $('.results').html(html);
+        }
+    });
+});
+
+$('#dStatsButton').click(function() {
+    let stat = 'dstat';
+    $.ajax({
+        method: "GET",
+        url: 'DeliverySQL.php',
+        data: {
+            stats: stat
+        },
         success: function(html) {
             $('.results').html(html);
         }

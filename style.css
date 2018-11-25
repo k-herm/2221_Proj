@@ -146,3 +146,8 @@ input[type="button"]:hover, button:hover {
 label {
     justify-self: right;
 }
+
+.results {
+    display: flex;
+    justify-content: center;
+}
