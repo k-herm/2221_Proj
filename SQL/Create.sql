@@ -258,15 +258,15 @@ VALUES(25564, 'b.kieran', 637),
 (28326, 'e.evaline', 5283),
 (61132, 'j.hendricks', 7009),
 (11485, 'm.lopez', 7167),
-(20603, 'k.cybil', 8053);
+(20603, 'k.cybil', 8053),
+(67568, 'k.kianpoor', 8057);
 
 INSERT INTO admin_login(login_pass, username, Employee_ID)
 VALUES(99181, 'r.truman', 3030),
 (26356, 'd.vera', 4677),
 (53573, 'm.cuthbert', 7027),
 (56762, 'h.lester', 9318),
-(55161, 'w.landford', 9944),
-(67568, 'k.kianpoor', 8057);
+(55161, 'w.landford', 9944);
 
 
 
