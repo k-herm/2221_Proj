@@ -2,7 +2,7 @@ guardSQL- Projection Query
 SELECT Inmate_ID, Name, Age, Sex FROM inmate
 
 InmateSQL- Selection Query
-SELECT * FROM inmate WHERE name = '$InmateName' AND Inmate_ID = '$InmateID'
+SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'
 SELECT * FROM inmate WHERE Inmate_ID = $id
 
 VisitorsSQL-  Join query
