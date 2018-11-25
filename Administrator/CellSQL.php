@@ -6,12 +6,11 @@
 <?php
 	require_once '../helperFunctions.php';
 	$conn = connectToDatabase();
-	//echo all inmates with links
 	$query = "SELECT * FROM cell";
 	$result = $conn->query($query);
 
 
-	//echo all inmates with links
+	
 	if($result->num_rows > 0){
 		echo "<br> ID". "\t Max_Occupants". "\t Location <br>"; 
 		while($row = $result->fetch_assoc()){
