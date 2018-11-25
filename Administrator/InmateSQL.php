@@ -19,7 +19,7 @@
 	}
 
 	//construct query
-	$query = "SELECT * FROM inmate WHERE name = '$InmateName' AND Inmate_ID = '$InmateID'";
+	$query = "SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'";
 	$result = $conn->query($query);
 
 	//Execute query
