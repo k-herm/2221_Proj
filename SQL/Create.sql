@@ -229,6 +229,7 @@ VALUES(55748, 1911, 'Father'),
 (257742, 4798, 'Lawyer');
 
 
+
 INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Date, Time_In, Time_Out)
 VALUES(55748, 9944, '2018-10-21', '16:15:21', '16:50:43'),
 (224131, 4677, '2018-09-20', '13:54:14', '14:50:02'),

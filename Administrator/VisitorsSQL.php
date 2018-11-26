@@ -38,6 +38,7 @@
 
 
 
+
 		//construct query
 		$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
         	          FROM inmate i, visitor v, visitor_logs vl, visits vv
