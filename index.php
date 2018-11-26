@@ -16,7 +16,7 @@
             <label for="loginName">Login Name:</label>
             <input id="loginName" type="text" name="loginName">
             <label for="pswd">Password:</label>
-            <input id="pswd" type="text" name="pswd">
+            <input id="pswd" type="password" name="pswd">
 
             <input type="radio" name="employee" id="admin" value="Admin" checked>
             <label for="admin">Administrator</label>

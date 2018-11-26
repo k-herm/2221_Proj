@@ -10,7 +10,6 @@
         echo "<h1>0 result found</h1>";
 
 
-<<<<<<< HEAD
 		//put stats code here..
 
 	//construct query, In the Query vv means visits verb
@@ -20,8 +19,6 @@
 	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
 	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
 	$result = $conn->query($query);
-=======
->>>>>>> f4c95d67e01b71fcd693ea1fabef993b9afa9898
 
 
 

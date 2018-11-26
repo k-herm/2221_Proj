@@ -87,7 +87,10 @@
         $query = "DELETE FROM inmate WHERE Inmate_ID = $id";
         $result = $conn->query($query);
 
-	    header('Location: ./guard.php?login');
+        if(isset($_GET['a']))
+            header('Location: ./../Administrator/admin.php?login');
+        else
+            header('Location: ./guard.php?login');
     }
 	clearConnection($conn);
 ?>

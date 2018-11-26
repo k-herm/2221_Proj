@@ -32,7 +32,7 @@
         while($row = $result->fetch_assoc()){
 			$link = $row["Inmate_ID"];
 			//echo "<p><a href='./inmateProfile.php?login&id=$link'>$link</a>";
-        	echo "<tr><td>" . "<p><a href='../Guard/inmateProfile.php?login&id=$link'>$link</a>". " </td><td>". $row[ "Name"]
+        	echo "<tr><td>" . "<p><a href='../Guard/inmateProfile.php?login&id=$link&a=t'>$link</a>". " </td><td>". $row[ "Name"]
         		. "</td><td>" . $row["Security_Level"] . "</td></tr>";
         }
 
