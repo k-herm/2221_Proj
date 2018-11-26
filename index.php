@@ -42,7 +42,7 @@
 		$username = $_POST['loginName'];
 		$password = $_POST['pswd'];
 		if ($employee == "Guard"){
-			$query = "SELECT Login_pass, Username FROM guard_login WHERE Login_pass = $password AND Username = '$username'";
+			$query = "SELECT Login_pass, Username FROM guard_login WHERE Login_pass = '$password' AND Username = '$username'";
 			$result = $conn->query($query);
 			if($result->num_rows == 1)
 			    header('Location: ./Guard/guard.php?login');
@@ -51,7 +51,7 @@
 			}
 		}
 		if ($employee == "Admin"){
-			$query = "SELECT Login_pass, Username FROM admin_login WHERE Login_pass = $password AND Username = '$username'";
+			$query = "SELECT Login_pass, Username FROM admin_login WHERE Login_pass = '$password' AND Username = '$username'";
 			$result = $conn->query($query);
 			if($result->num_rows == 1)
 			header('Location: ./Administrator/admin.php?login');

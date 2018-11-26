@@ -25,12 +25,14 @@
 	//Execute query
 	if($result->num_rows > 0){
 
-		echo "<h1>Visitors based on this search are: </h1>";
+		echo "<h1>Inmates based on this search are: </h1>";
         echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Inmate_ID</th><th>Inmate_Name</th><th>Security_Level</th></tr>";
         // output data for each row
         while($row = $result->fetch_assoc()){
-        	echo "<tr><td>" . $row["Inmate_ID"] . " </td><td>". $row[ "Name"]
+			$link = $row["Inmate_ID"];
+			//echo "<p><a href='./inmateProfile.php?login&id=$link'>$link</a>";
+        	echo "<tr><td>" . "<p><a href='../Guard/inmateProfile.php?login&id=$link'>$link</a>". " </td><td>". $row[ "Name"]
         		. "</td><td>" . $row["Security_Level"] . "</td></tr>";
         }
 

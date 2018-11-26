@@ -6,9 +6,11 @@
 
        //HOW CAN I CHECK TO DO DIFFERENT THING IF THE PERSON CKLICKS ON CURRENT STAT ?
 	if(isset($_GET['stats'])) {
-		echo 'Stats';
+		echo "<h1>Stats</h1>";
+        echo "<h1>0 result found</h1>";
 
 
+<<<<<<< HEAD
 		//put stats code here..
 
 	//construct query, In the Query vv means visits verb
@@ -18,6 +20,8 @@
 	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
 	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
 	$result = $conn->query($query);
+=======
+>>>>>>> f4c95d67e01b71fcd693ea1fabef993b9afa9898
 
 
 
@@ -38,10 +42,11 @@
 
 
 		//construct query
-		$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, v.Relationship, vl.Date, vl.Time_in, vl.Time_out
-				FROM inmate i, visitor v, visitor_logs vl
-				WHERE vl.visitor_ID = v.Visitor_ID AND i.Inmate_ID = v.Inmate_ID AND (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
-														OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
+		$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
+        	          FROM inmate i, visitor v, visitor_logs vl, visits vv
+        	          WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
+        	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
+        	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
 		$result = $conn->query($query);
 
 		//Execute query
