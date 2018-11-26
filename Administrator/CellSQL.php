@@ -10,7 +10,6 @@
 
 
 	if($result->num_rows > 0){
-		//echo "<br> ID". "\t Max_Occupants". "\t Location <br>";
 		echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Cell_ID</th><th>Max_Occupants</th><th>Location</th><th>Vacancy</th>";
 		while($row = $result->fetch_assoc()){
