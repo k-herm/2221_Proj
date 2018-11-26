@@ -26,7 +26,7 @@
 
 	//Execute query
 	if($result->num_rows > 0){
-		echo "<h1>Shipping</h1>";
+		echo "<h1>Companies based on search:</h1>";
         echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Delivey Company</th><th>ID";
         // output data for each row
