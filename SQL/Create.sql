@@ -78,7 +78,6 @@ CREATE Table Visits (
     Visit_ID INTEGER,
     Relationship char(20),
     PRIMARY KEY (Visitor_ID, Inmate_ID, Visit_ID),
-    FOREIGN Key (Visit_ID) references Visitor_Logs(Visit_ID),
     FOREIGN KEY (Visitor_ID) references Visitor_Logs(Visitor_ID)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
