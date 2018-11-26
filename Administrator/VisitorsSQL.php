@@ -6,19 +6,57 @@
 
        //HOW CAN I CHECK TO DO DIFFERENT THING IF THE PERSON CKLICKS ON CURRENT STAT ?
 	if(isset($_GET['stats'])) {
-		echo "<h1>Stats</h1>";
-        echo "<h1>0 result found</h1>";
+
 
 
 		//put stats code here..
 
 	//construct query, In the Query vv means visits verb
-	$query = "SELECT name FROM visitor v
+	$query = "SELECT name AS Name_Visitor_Of_All FROM visitor v
 	                    WHERE NOT EXISTS(SELECT name FROM inmate i
 	                    WHERE NOT EXISTS(SELECT inmate_ID FROM visits vv
 	                    WHERE vv.Visitor_ID=v.Visitor_ID AND vv.Inmate_ID=i.Inmate_ID))";
 	$result = $conn->query($query);
 
+    		//Execute query
+    		if($result->num_rows > 0){
+
+    			echo "<h1>These Visitor Visit Everyone or More Than one Person. Cautious</h1><br> <br>";
+    			echo "<table align=\"center\"border= \"1\">";
+    			echo "<br> <br>
+    			<tr><th>Visitors who visit everyone</th></tr>";
+    			// output data for each row
+    			while($row = $result->fetch_assoc()){
+    				echo "<tr><td>" . $row["Name_Visitor_Of_All"] . " </td></tr>";
+    			}
+
+    		}	else{
+    			echo "<h1>0 result found</h1>";
+    		}
+    echo "<h1>\n</h1>";
+    $result = $conn->query($query);
+
+    $query = "SELECT v.name AS Visitor_Of_More_Than_one
+                                  FROM visitor v, visits vv
+                                  WHERE v.Visitor_ID = vv.Visitor_ID
+                                  GROUP BY v.Visitor_ID
+                                  HAVING COUNT(*) > 1";
+    	$result = $conn->query($query);
+
+        		//Execute query
+        if($result->num_rows > 0){
+        	echo "<table align=\"center\"border= \"1\">";
+        	echo "<tr><th>Visitors Who visit more than one inmate</th></tr>";
+        	// output data for each row
+        	while($row = $result->fetch_assoc()){
+        	    echo "<tr><td>" . $row["Visitor_Of_More_Than_one"] . " </td></tr>";
+        	}
+
+        	}	else{
+        	    echo "<h1>0 result found</h1>";
+        	}
+
+	$conn->close();
 
 
 	}
