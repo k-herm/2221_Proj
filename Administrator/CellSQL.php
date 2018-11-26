@@ -7,7 +7,9 @@
               WHERE c.Cell_ID = i.Cell_Id
               GROUP BY i.Cell_ID";
 	$result = $conn->query($query);
-
+    clearConnection($conn);
+    $query2 = "SELECT COUNT(*) FROM CELL";
+    $result2 = $conn->query($query2);
 
 	if($result->num_rows > 0){
 		echo "<table align=\"center\"border= \"1\">";
@@ -22,6 +24,12 @@
 	else{
 		echo "0 results!";
 	}
+
+    if($result2->num_rows > 0 ){
+        $row = $result2->fetch_assoc();
+        echo "<h1>There are ". $row["COUNT(*)"]. " cells in the prison.</h1>";
+    }
+
 	clearConnection($conn);
 
 ?>
