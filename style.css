@@ -1,7 +1,7 @@
 body {
     background-image: url("./Img/tyler-rutherford-1142553-unsplash.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
 
     display: grid;
@@ -138,7 +138,7 @@ nav > ul > li:hover {
     display: none;
 }
 #cSearchButton { padding: 0.5em 1em; }
-input[type="button"], button {
+input[type="button"], button, #updateButton, #deleteButton {
     grid-column: 2 / -1;
     font-size: 1.1em;
     padding: 0.2em;
@@ -172,12 +172,12 @@ label {
 }
 .inmateInfo > table > tbody > tr > td, td, th{
     padding: 0.5em;
-    /* font-size: 1.1em; */
 }
 .inmateInfo > table {
     border: none;
 }
-
+#deleteButton { background-color: darkred; }
+#updateButton, #deleteButton { padding: 0.1em 1em; }
 table, th {
     border: 1px solid black;
 }

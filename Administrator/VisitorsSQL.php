@@ -11,8 +11,6 @@
 
 		//put stats code here..
 
-<<<<<<< HEAD
-=======
 	//construct query, In the Query vv means visits verb
 	$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
 	          FROM inmate i, visitor v, visitor_logs vl, visits vv
@@ -20,7 +18,6 @@
 	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
 	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
 	$result = $conn->query($query);
->>>>>>> 15ef6617836353778fc42c828ed3b17e145f3fd5
 
 
 

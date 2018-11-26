@@ -36,7 +36,7 @@
 	if($conn->connect_error){
 		die("Connection failed: ". $conn->connect_error);
 		}
-		
+
 	if(isset($_POST['submit'])) {
 		$employee = $_POST['employee'];
 		$username = $_POST['loginName'];
@@ -45,7 +45,7 @@
 			$query = "SELECT Login_pass, Username FROM guard_login WHERE Login_pass = $password AND Username = '$username'";
 			$result = $conn->query($query);
 			if($result->num_rows == 1)
-			header('Location: ./Guard/guard.php?login');
+			    header('Location: ./Guard/guard.php?login');
 			else{
 				echo "<font color='red'>INCORRECT LOGIN INFORMATION";
 			}

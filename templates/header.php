@@ -1,4 +1,5 @@
 <header>
+    <!-- Image used from Wikipedia.org -->
     <img src='./Img/coatofarms.png' alt='' class='coatOfArms'>
     <h1>Federal Department of Justice</h1>
     <h1>Database</h1>
