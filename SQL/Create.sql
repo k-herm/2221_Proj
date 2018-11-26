@@ -74,9 +74,11 @@ CREATE TABLE Visitor (
 CREATE Table Visits (
     Visitor_ID INTEGER,
     Inmate_ID INTEGER,
+    Visit_ID INTEGER,
     Relationship char(20),
-    PRIMARY KEY (Visitor_ID, Inmate_ID),
-    FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID)
+    PRIMARY KEY (Visitor_ID, Inmate_ID, Visit_ID),
+    FOREIGN Key (Visit_ID) references Visitor_Logs(Visit_ID),
+    FOREIGN KEY (Visitor_ID) references Visitor_Logs(Visitor_ID)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
     FOREIGN KEY (Inmate_ID) references Inmate(inmate_id)
@@ -87,10 +89,11 @@ CREATE Table Visits (
 CREATE TABLE Visitor_Logs (
 	Visitor_ID INTEGER,
 	Employee_ID INTEGER,
+	Visit_ID INTEGER,
 	Date DATE,
     Time_in TIME NOT NULL,
     Time_out TIME NOT NULL,
-	PRIMARY KEY (Visitor_ID, Date),
+	PRIMARY KEY (Visitor_ID, Visit_ID, Date),
     FOREIGN KEY (Employee_ID) references Administrator(Employee_ID)
             ON UPDATE CASCADE,
     FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID)
@@ -206,41 +209,42 @@ VALUES (55748, 'Willard Piers'),
 (347895, 'Geneva Winter'),
 (257742, 'Saul Goodman');
 
-INSERT INTO Visits(Visitor_ID, Inmate_ID, Relationship)
-VALUES(55748, 1911, 'Father'),
-(224131, 1400, 'Significant Other'),
-(626061, 8603, 'Niece'),
-(641821, 8603, 'Acquaintance'),
-(347895, 151, 'Lawyer'),
-(257742, 151, 'Lawyer'),
-(257742, 01911, 'Lawyer'),
-(257742, 1400, 'Lawyer'),
-(257742, 1500, 'Lawyer'),
-(257742, 8603, 'Lawyer'),
-(257742, 8624, 'Lawyer'),
-(257742, 6945, 'Lawyer'),
-(257742, 6951, 'Lawyer'),
-(257742, 6273, 'Lawyer'),
-(257742, 4798, 'Lawyer');
+INSERT INTO Visits(Visitor_ID, Inmate_ID, Visit_ID, Relationship)
+VALUES(55748, 1911, 1, 'Father'),
+(224131, 1400, 2, 'Significant Other'),
+(626061, 8603, 3, 'Niece'),
+(641821, 8624, 4, 'Acquaintance'),
+(347895, 151, 5, 'Lawyer'),
+(347895, 151, 6, 'Lawyer'),
+(257742, 151, 7, 'Lawyer'),
+(257742, 01911, 8, 'Lawyer'),
+(257742, 1400, 9, 'Lawyer'),
+(257742, 1500, 10, 'Lawyer'),
+(257742, 8603, 11, 'Lawyer'),
+(257742, 8624, 12, 'Lawyer'),
+(257742, 6945, 13, 'Lawyer'),
+(257742, 6951, 14, 'Lawyer'),
+(257742, 6273, 15, 'Lawyer'),
+(257742, 4798, 16, 'Lawyer');
 
 
-INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Date, Time_In, Time_Out)
-VALUES(55748, 9944, '2018-10-21', '16:15:21', '16:50:43'),
-(224131, 4677, '2018-09-20', '13:54:14', '14:50:02'),
-(626061, 7027, '2018-10-19', '14:35:55', '14:58:32'),
-(626061, 3030, '2018-10-15', '15:23:25', '16:05:12'),
-(347895, 3030, '2018-09-28', '13:42:51', '14:43:44'),
-(347895, 3030, '2018-09-20', '14:52:57', '15:53:13'),
-(257742, 7027, '2018-10-19', '14:30:15', '15:35:22'),
-(257742, 7027, '2018-10-15', '14:33:25', '15:30:12'),
-(257742, 7027, '2018-09-27', '14:20:10', '15:26:31'),
-(257742, 9944, '2018-09-24', '14:40:11', '15:38:55'),
-(257742, 3030, '2018-09-22', '14:45:23', '15:58:12'),
-(257742, 4677, '2018-09-17', '14:31:22', '15:54:25'),
-(257742, 9944, '2018-09-15', '14:30:30', '15:36:55'),
-(257742, 4677, '2018-09-14', '14:26:23', '15:35:23'),
-(257742, 4677, '2018-09-30', '14:27:33', '15:43:52'),
-(257742, 9944, '2018-09-29', '14:33:15', '15:33:35');
+INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Visit_ID, Date, Time_In, Time_Out)
+VALUES(55748, 9944, 1, '2018-10-21', '16:15:21', '16:50:43'),
+(224131, 4677, 2, '2018-09-20', '13:54:14', '14:50:02'),
+(626061, 7027, 3, '2018-10-19', '14:35:55', '14:58:32'),
+(641821, 3030, 4, '2018-10-15', '15:23:25', '16:05:12'),
+(347895, 3030, 5, '2018-09-28', '13:42:51', '14:43:44'),
+(347895, 3030, 6, '2018-09-20', '14:52:57', '15:53:13'),
+(257742, 7027, 7, '2018-10-19', '14:30:15', '15:35:22'),
+(257742, 7027, 8, '2018-10-15', '14:33:25', '15:30:12'),
+(257742, 7027, 9, '2018-09-27', '14:20:10', '15:26:31'),
+(257742, 9944, 10, '2018-09-24', '14:40:11', '15:38:55'),
+(257742, 3030, 11, '2018-09-22', '14:45:23', '15:58:12'),
+(257742, 4677, 12, '2018-09-17', '14:31:22', '15:54:25'),
+(257742, 9944, 13, '2018-09-15', '14:30:30', '15:36:55'),
+(257742, 4677, 14, '2018-09-14', '14:26:23', '15:35:23'),
+(257742, 4677, 15, '2018-09-30', '14:27:33', '15:43:52'),
+(257742, 9944, 16, '2018-09-29', '14:33:15', '15:33:35');
 
 INSERT INTO Delivery_company(company_id, name, contents, frequency, representative)
 VALUES(559615, 'Urban Clean: Janitorial Supplies', 'Toilet Paper, Hand Towels, Hand Soap, Bleach', 'Bi-Weekly', 'David Rose'),
