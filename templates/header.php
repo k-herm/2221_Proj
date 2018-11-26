@@ -4,6 +4,7 @@
     <h1>Federal Department of Justice</h1>
     <h1>Database</h1>
     <?php
+        date_default_timezone_set('America/Vancouver');
         if(isset($_GET['login'])) {
             echo '<div class="logoutHeader">';
             echo '<p id="today">' . date("F j Y") . '</p>';
