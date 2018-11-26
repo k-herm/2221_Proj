@@ -75,8 +75,9 @@ CREATE TABLE Visitor (
 CREATE Table Visits (
     Visitor_ID INTEGER,
     Inmate_ID INTEGER,
+    Visit_ID INTEGER AUTO_INCREMENT,
     Relationship char(20),
-    PRIMARY KEY (Visitor_ID, Inmate_ID),
+    PRIMARY KEY (Visit_ID),
     FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID)
             ON DELETE CASCADE
             ON UPDATE CASCADE,
@@ -88,13 +89,15 @@ CREATE Table Visits (
 CREATE TABLE Visitor_Logs (
 	Visitor_ID INTEGER,
 	Employee_ID INTEGER,
+	Visit_ID INTEGER AUTO_INCREMENT,
 	Date DATE,
     Time_in TIME NOT NULL,
     Time_out TIME NOT NULL,
-	PRIMARY KEY (Visitor_ID, Date),
+	PRIMARY KEY (Visit_ID, Visitor_ID, Date),
     FOREIGN KEY (Employee_ID) references Administrator(Employee_ID)
             ON UPDATE CASCADE,
-    FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID)
+    FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID),
+    FOREIGN KEY (Visit_ID) references Visits(Visit_ID)
 );
 
 
@@ -211,7 +214,8 @@ INSERT INTO Visits(Visitor_ID, Inmate_ID, Relationship)
 VALUES(55748, 1911, 'Father'),
 (224131, 1400, 'Significant Other'),
 (626061, 8603, 'Niece'),
-(641821, 8603, 'Acquaintance'),
+(641821, 8624, 'Acquaintance'),
+(347895, 151, 'Lawyer'),
 (347895, 151, 'Lawyer'),
 (257742, 151, 'Lawyer'),
 (257742, 01911, 'Lawyer'),
@@ -225,11 +229,12 @@ VALUES(55748, 1911, 'Father'),
 (257742, 4798, 'Lawyer');
 
 
+
 INSERT INTO visitor_logs(Visitor_ID, Employee_ID, Date, Time_In, Time_Out)
 VALUES(55748, 9944, '2018-10-21', '16:15:21', '16:50:43'),
 (224131, 4677, '2018-09-20', '13:54:14', '14:50:02'),
 (626061, 7027, '2018-10-19', '14:35:55', '14:58:32'),
-(626061, 3030, '2018-10-15', '15:23:25', '16:05:12'),
+(641821, 3030, '2018-10-15', '15:23:25', '16:05:12'),
 (347895, 3030, '2018-09-28', '13:42:51', '14:43:44'),
 (347895, 3030, '2018-09-20', '14:52:57', '15:53:13'),
 (257742, 7027, '2018-10-19', '14:30:15', '15:35:22'),

@@ -10,18 +10,14 @@
         echo "<h1>0 result found</h1>";
 
 
-<<<<<<< HEAD
 		//put stats code here..
 
 	//construct query, In the Query vv means visits verb
-	$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
-	          FROM inmate i, visitor v, visitor_logs vl, visits vv
-	          WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
-	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
-	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
+	$query = "SELECT name FROM visitor v
+	                    WHERE NOT EXISTS(SELECT name FROM inmate i
+	                    WHERE NOT EXISTS(SELECT inmate_ID FROM visits vv
+	                    WHERE vv.Visitor_ID=v.Visitor_ID AND vv.Inmate_ID=i.Inmate_ID))";
 	$result = $conn->query($query);
-=======
->>>>>>> f4c95d67e01b71fcd693ea1fabef993b9afa9898
 
 
 
@@ -41,10 +37,12 @@
 
 
 
+
 		//construct query
 		$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
         	          FROM inmate i, visitor v, visitor_logs vl, visits vv
-        	          WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
+        	          WHERE vl.visitor_ID = v.Visitor_ID AND vl.visitor_ID = vv.visitor_ID AND vv.Visitor_ID = v.Visitor_ID
+        	                                                AND i.Inmate_ID = vv.Inmate_ID AND vv.Visit_ID = vl.Visit_ID AND
         	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
         	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
 		$result = $conn->query($query);
