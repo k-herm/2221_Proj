@@ -16,7 +16,7 @@
             <label for="loginName">Login Name:</label>
             <input id="loginName" type="text" name="loginName">
             <label for="pswd">Password:</label>
-            <input id="pswd" type="text" name="pswd">
+            <input id="pswd" type="password" name="pswd">
 
             <input type="radio" name="employee" id="admin" value="Admin" checked>
             <label for="admin">Administrator</label>
@@ -45,7 +45,7 @@
 			$query = "SELECT Login_pass, Username FROM guard_login WHERE Login_pass = '$password' AND Username = '$username'";
 			$result = $conn->query($query);
 			if($result->num_rows == 1)
-			header('Location: ./Guard/guard.php?login');
+			    header('Location: ./Guard/guard.php?login');
 			else{
 				echo "<font color='red'>INCORRECT LOGIN INFORMATION";
 			}

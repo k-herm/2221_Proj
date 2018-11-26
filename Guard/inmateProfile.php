@@ -36,10 +36,61 @@
                 }
             ?>
                 </table>
+                <br><br>
+                <form action="#" method="post">
+                    <select name="attributeList">
+                        <option value="Name">Name</option>
+                        <option value="Cell_ID">Cell ID</option>
+                        <option value="Employee_ID">Guard ID</option>
+                        <option value="Security_Level">Security Level</option>
+                        <option value="Age">Age</option>
+                        <option value="Sex">Sex</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Parole_Date">Parole Date</option>
+                    </select>
+                    <input type="text" name="updateField">
+                    <input id="updateButton" name="update" type="submit" value="UPDATE">
+                </form>
+
             </div>
-            <img id="profilePic" src="./Img/criminalProfile.jpg" alt="">
+            <!-- Image used from jolawoffice.com -->
+            <div class="right">
+                <img id="profilePic" src="./Img/criminalProfile.jpg" alt="">
+                <form action="#" method="post">
+                    <input id="deleteButton" name="delete" type="submit" value="DELETE">
+                </form>
+            </div>
         </div>
     </main>
 
 </body>
 </html>
+
+<?php
+	require_once '../helperFunctions.php';
+	$conn = connectToDatabase();
+	if($conn->connect_error){
+		die("Connection failed: ". $conn->connect_error);
+		}
+
+	if(isset($_POST['update'])) {
+		$attribute = $_POST['attributeList'];
+        $newInfo = $_POST['updateField'];
+
+		$query = "UPDATE inmate SET $attribute = '$newInfo' WHERE Inmate_ID = $id";
+        $result = $conn->query($query);
+
+        $loc = "Location: ./inmateProfile.php?login&id=$id";
+        header($loc);
+    }
+    if(isset($_POST['delete'])) {
+        $query = "DELETE FROM inmate WHERE Inmate_ID = $id";
+        $result = $conn->query($query);
+
+        if(isset($_GET['a']))
+            header('Location: ./../Administrator/admin.php?login');
+        else
+            header('Location: ./guard.php?login');
+    }
+	clearConnection($conn);
+?>

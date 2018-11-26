@@ -1,19 +1,25 @@
 guardSQL- Projection Query
-SELECT Inmate_ID, Name, Age, Sex FROM inmate
+	SELECT Inmate_ID, Name, Age, Sex FROM inmate
 
 InmateSQL- Selection Query
-SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'
-SELECT * FROM inmate WHERE Inmate_ID = $id
+	SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'
+	SELECT * FROM inmate WHERE Inmate_ID = $id
 
 VisitorsSQL-  Join query
-SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
-	          FROM inmate i, visitor v, visitor_logs vl, visits vv
-	          WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
-	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
-	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')
+	SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
+		FROM inmate i, visitor v, visitor_logs vl, visits vv
+		WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
+				(i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
+				OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')
 
 CellSQL- Nested aggregation with group-by
-SELECT c.Cell_ID, c.Max_Occupants, c.Location,Max_Occupants - COUNT(*) AS Vacancy
-FROM cell c, inmate i
-WHERE c.Cell_ID = i.Cell_Id
-GROUP BY i.Cell_ID
+	SELECT c.Cell_ID, c.Max_Occupants, c.Location,Max_Occupants - COUNT(*) AS Vacancy
+	FROM cell c, inmate i
+	WHERE c.Cell_ID = i.Cell_Id
+	GROUP BY i.Cell_ID
+
+Update Query
+	UPDATE inmate SET $attribute = '$newInfo' WHERE Inmate_ID = $id
+
+Delete Query
+	DELETE FROM inmate WHERE Inmate_ID = $id

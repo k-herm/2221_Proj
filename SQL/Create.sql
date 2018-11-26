@@ -63,6 +63,7 @@ CREATE TABLE Therapist_Analysis (
 	PRIMARY KEY (session_ID),
     FOREIGN KEY (Inmate_ID) references Inmate(Inmate_ID)
             ON UPDATE CASCADE
+            ON DELETE CASCADE
 );
 
 CREATE TABLE Visitor (

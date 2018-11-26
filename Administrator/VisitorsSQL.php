@@ -10,6 +10,15 @@
         echo "<h1>0 result found</h1>";
 
 
+		//put stats code here..
+
+	//construct query, In the Query vv means visits verb
+	$query = "SELECT v.Visitor_ID, v.Name as visitorName, i.Name as InmateName, vv.Relationship, vl.Date, vl.Time_in, vl.Time_out
+	          FROM inmate i, visitor v, visitor_logs vl, visits vv
+	          WHERE vl.visitor_ID = v.Visitor_ID AND vv.Visitor_ID = v.Visitor_ID AND i.Inmate_ID = vv.Inmate_ID AND
+	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
+	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
+	$result = $conn->query($query);
 
 
 
