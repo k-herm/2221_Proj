@@ -48,7 +48,10 @@ button, input[type="button"], input[type="submit"] {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
-
+.loginForm > p {
+    grid-column: 1 / -1;
+    color: red;
+}
 #loginButton {
     grid-column: 1 / -1;
     padding: 0.5em;

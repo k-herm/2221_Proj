@@ -1,10 +1,3 @@
-<!--
-    variables:
-
-    deliveryName
-    deliveryID
--->
-
 <?php
 
 	require_once '../helperFunctions.php';
@@ -12,9 +5,9 @@
 
 if(isset($_GET['stats'])) {
 	$query = "SELECT name, company_id, frequency
-              FROM Delivery_company 
+              FROM Delivery_company
               GROUP BY company_id
-              ORDER BY 
+              ORDER BY
                 CASE frequency
                     WHEN 'ON DEMAND' THEN 1
                     WHEN 'WEEKLY' THEN 2
@@ -25,7 +18,7 @@ if(isset($_GET['stats'])) {
 
 
 	if($result->num_rows > 0){
-		echo "<h1> Companies Based on Frequency </h1>"; 
+		echo "<h1> Companies Based on Frequency </h1>";
 		echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Delivery Company</th><th>ID</th><th>Frequency</th>";
 		while($row = $result->fetch_assoc()){
@@ -51,9 +44,9 @@ else{
 
 	//Execute query
 	if($result->num_rows > 0){
-		echo "<h1>Companies based on search:</h1>";
+		echo "<h1>Companies based on this search are:</h1>";
         echo "<table align=\"center\"border= \"1\">";
-        echo "<tr><th>Delivery Company</th><th>ID";
+        echo "<tr><th>Delivery Company</th><th>ID</th></tr>";
         // output data for each row
         while($row = $result->fetch_assoc()){
         	echo "<tr><td>" . $row["Name"] . "</td><td>". $row["Company_ID"] . "</td></tr>";
@@ -63,6 +56,6 @@ else{
 		echo "<h1>0 result found with this ID and Name</h1>";
 	}
 }
-    
+
 	$conn->close();
 ?>

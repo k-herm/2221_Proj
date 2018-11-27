@@ -34,6 +34,8 @@
                         echo "<tr><td>Crime: </td><td>" . $row["Crime"] . "</td></tr>";
                         echo "<tr><td>Parole Date: </td><td>" . $row["Parole_Date"] . "</td></tr>";
                 }
+            	$conn->close();
+
             ?>
                 </table>
                 <br><br>
@@ -92,5 +94,7 @@
         else
             header('Location: ./guard.php?login');
     }
-	clearConnection($conn);
+    clearConnection($conn);
+	$conn->close();
+
 ?>

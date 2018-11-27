@@ -14,7 +14,6 @@ function connectToDatabase() {
     }
 }
 
-//use this function after $conn->query()
 function clearConnection($mysql) {
     while($mysql->more_results()) {
         $mysql->next_result();

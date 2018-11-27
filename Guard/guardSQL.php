@@ -1,10 +1,3 @@
-<!--
-    variables:
-    inmateName
-    inmateID
-    paroleDate
--->
-
 <?php
 // to use connect DB function
 require_once '../helperFunctions.php';
@@ -38,7 +31,6 @@ $paroleDate='';
 if(!empty($_POST['inmateID'])) {
     $id = $_POST['inmateID'];
 	$searchParam += 1;
-    //echo "<h1>" . $id . "</h1>";
 }
 if(!empty($_POST['inmateName'])){
 	$name = $_POST['inmateName'];
@@ -100,6 +92,7 @@ else{
 	echo "<br>0 results!";
 }
 clearConnection($conn);
+$conn->close();
 
 
 ?>

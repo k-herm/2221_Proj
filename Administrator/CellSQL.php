@@ -1,8 +1,4 @@
-<!--
-    no variables(???)
 
-    echo a table with <a> links on cell id
--->
 <?php
 	require_once '../helperFunctions.php';
 	$conn = connectToDatabase();
@@ -11,10 +7,11 @@
               WHERE c.Cell_ID = i.Cell_Id
               GROUP BY i.Cell_ID";
 	$result = $conn->query($query);
-
+    clearConnection($conn);
+    $query2 = "SELECT COUNT(*) FROM CELL";
+    $result2 = $conn->query($query2);
 
 	if($result->num_rows > 0){
-		//echo "<br> ID". "\t Max_Occupants". "\t Location <br>"; 
 		echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Cell_ID</th><th>Max_Occupants</th><th>Location</th><th>Vacancy</th>";
 		while($row = $result->fetch_assoc()){
@@ -27,6 +24,13 @@
 	else{
 		echo "0 results!";
 	}
+
+    if($result2->num_rows > 0 ){
+        $row = $result2->fetch_assoc();
+        echo "<h1>There are ". $row["COUNT(*)"]. " cells in the prison.</h1>";
+    }
+
 	clearConnection($conn);
+	$conn->close();
 
 ?>
