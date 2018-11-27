@@ -92,6 +92,7 @@ else{
 	echo "<br>0 results!";
 }
 clearConnection($conn);
+$conn->close();
 
 
 ?>

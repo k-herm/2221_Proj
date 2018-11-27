@@ -8,6 +8,9 @@ InmateSQL- Selection Query
 	SELECT * FROM inmate WHERE name = '$InmateName' OR Inmate_ID = '$InmateID'
 	SELECT * FROM inmate WHERE Inmate_ID = $id
 
+InmateSQL - Aggregation Query
+SELECT COUNT(*) FROM inmate
+
 DeliverySQL- Selection Query
     SELECT * FROM Delivery_company WHERE name = '$deliveryName' OR company_ID = '$deliveryID
 
@@ -42,6 +45,9 @@ SELECT v.name AS Visitor_Of_More_Than_one
                                   WHERE v.Visitor_ID = vv.Visitor_ID
                                   GROUP BY v.Visitor_ID
                                   HAVING COUNT(*) > 1
+
+CellSQL Aggregation Query
+SELECT COUNT(*) FROM CELL
 
 CellSQL- Nested aggregation with group-by
 	SELECT c.Cell_ID, c.Max_Occupants, c.Location,Max_Occupants - COUNT(*) AS Vacancy

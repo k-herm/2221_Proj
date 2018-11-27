@@ -57,6 +57,8 @@
 					}
 				}
 				clearConnection($conn);
+				$conn->close();
+
 			?>
 
 

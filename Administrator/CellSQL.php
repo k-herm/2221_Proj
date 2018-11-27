@@ -31,5 +31,6 @@
     }
 
 	clearConnection($conn);
+	$conn->close();
 
 ?>
