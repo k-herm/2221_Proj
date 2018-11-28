@@ -44,7 +44,7 @@ else{
 
 	//Execute query
 	if($result->num_rows > 0){
-		echo "<h1>Companies based on this search are:</h1>";
+		echo "<h1>Delivery companies based on this search are:</h1>";
         echo "<table align=\"center\"border= \"1\">";
         echo "<tr><th>Delivery Company</th><th>ID</th></tr>";
         // output data for each row

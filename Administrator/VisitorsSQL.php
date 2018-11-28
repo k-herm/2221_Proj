@@ -72,7 +72,7 @@
         	          WHERE vl.visitor_ID = v.Visitor_ID AND vl.visitor_ID = vv.visitor_ID AND vv.Visitor_ID = v.Visitor_ID
         	                                                AND i.Inmate_ID = vv.Inmate_ID AND vv.Visit_ID = vl.Visit_ID AND
         	                                                (i.name = '$InmateName' OR i.Inmate_ID = '$InmateID'
-        	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName')";
+        	                                                OR v.Visitor_ID = '$VisitorID' OR v.name = '$VisitorName' OR vl.Date = '$VisitorDate')";
 		$result = $conn->query($query);
 
 		//Execute query

@@ -21,6 +21,14 @@
             <input id="paroleDate" type="text" name="paroleDate">
 
             <input id="searchButton" type="button" value="Search">
+            <div></div>
+            <div>
+                <input type="checkbox" id="checkCell" name="cell" value="cell">Cell ID
+                <input type="checkbox" id="checkSecurity" name="security" value="security">Security Level
+                <input type="checkbox" id="checkGuard" name="guard" value="guard">Guard ID
+                <input type="checkbox" id="checkCrime" name="crime" value="crime">Crime
+                <input type="checkbox" id="checkParole" name="parole" value="parole">Parole Date
+            </div>
         </div>
 
         <div class="results">
@@ -37,13 +45,24 @@
         let iname = $('#iname').val();
         let pdate = $('#paroleDate').val();
 
+        let cell = $('#checkCell').prop("checked");
+        let security = $('#checkSecurity').prop("checked");
+        let guard = $('#checkGuard').prop("checked");
+        let crime = $('#checkCrime').prop("checked");
+        let parole = $('#checkParole').prop("checked");
+
         $.ajax({
             method: "POST",
             url: 'guardSQL.php',
             data: {
                 inmateName: iname,
                 inmateID: iid,
-                paroleDate: pdate
+                paroleDate: pdate,
+                cell: cell,
+                security: security,
+                guardId: guard,
+                crime: crime,
+                parole: parole
             },
             success: function(html) {
                 $('.results').html(html);

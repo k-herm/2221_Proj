@@ -15,9 +15,13 @@
 	$result = $conn->query($query);
 
     clearConnection($conn);
-    $query2 = "SELECT COUNT(*) FROM inmate";
+    $query2 = "SELECT MAX(age) FROM inmate";
     $result2 = $conn->query($query2);
 
+	if($result2->num_rows > 0 ){
+		$row = $result2->fetch_assoc();
+		echo "<h1>The oldest inmate is ". $row["MAX(age)"]. ".</h1>";
+	}
 	//Execute query
 	if($result->num_rows > 0){
 
@@ -35,9 +39,5 @@
 		echo "<h1>0 result found with this ID and Name</h1>";
 	}
 
-	if($result2->num_rows > 0 ){
-            $row = $result2->fetch_assoc();
-            echo "<h1>There are ". $row["COUNT(*)"]. " inmates in the prison.</h1>";
-        }
 	$conn->close();
 ?>

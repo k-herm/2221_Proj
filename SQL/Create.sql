@@ -49,9 +49,11 @@ CREATE TABLE Inmate(
 	Parole_Date DATE,
 	PRIMARY KEY (Inmate_ID),
 	FOREIGN KEY (Employee_ID) references Guards(Employee_ID)
-            ON UPDATE CASCADE,
+            ON UPDATE CASCADE
+            ON DELETE CASCADE,
     FOREIGN KEY (cell_ID) references Cell(Cell_ID)
             ON UPDATE CASCADE
+            ON DELETE CASCADE
 );
 
 
@@ -98,6 +100,8 @@ CREATE TABLE Visitor_Logs (
             ON UPDATE CASCADE,
     FOREIGN KEY (Visitor_ID) references Visitor(Visitor_ID),
     FOREIGN KEY (Visit_ID) references Visits(Visit_ID)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 );
 
 
