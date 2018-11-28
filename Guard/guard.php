@@ -23,11 +23,13 @@
             <input id="searchButton" type="button" value="Search">
             <div></div>
             <div>
-                <input type="checkbox" id="checkCell" name="cell" value="cell">Cell ID
-                <input type="checkbox" id="checkSecurity" name="security" value="security">Security Level
-                <input type="checkbox" id="checkGuard" name="guard" value="guard">Guard ID
-                <input type="checkbox" id="checkCrime" name="crime" value="crime">Crime
-                <input type="checkbox" id="checkParole" name="parole" value="parole">Parole Date
+                <select id="columns" name="columns">
+                    <option value="Cell_ID">Cell ID</option>
+                    <option value="Employee_ID">Guard ID</option>
+                    <option value="Security_Level">Security Level</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Parole_Date">Parole Date</option>
+                </select>
             </div>
         </div>
 
@@ -45,11 +47,7 @@
         let iname = $('#iname').val();
         let pdate = $('#paroleDate').val();
 
-        let cell = $('#checkCell').prop("checked");
-        let security = $('#checkSecurity').prop("checked");
-        let guard = $('#checkGuard').prop("checked");
-        let crime = $('#checkCrime').prop("checked");
-        let parole = $('#checkParole').prop("checked");
+        let column = $('#columns').val();
 
         $.ajax({
             method: "POST",
@@ -58,11 +56,7 @@
                 inmateName: iname,
                 inmateID: iid,
                 paroleDate: pdate,
-                cell: cell,
-                security: security,
-                guardId: guard,
-                crime: crime,
-                parole: parole
+                column: column
             },
             success: function(html) {
                 $('.results').html(html);
