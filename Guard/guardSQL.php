@@ -92,7 +92,39 @@ else{
 	echo "<br>0 results!";
 }
 clearConnection($conn);
+
+if(isset($_POST['column'])){
+	$query = "SELECT ";
+	$column = $_POST['column'];
+	if($column == "Cell_ID"){
+		$query .= $column;
+	}
+	else if($column == "Employee_ID"){
+		$query .= $column;
+	}
+	else if($column == "Security_Level"){
+		$query .= $column;
+	}
+	else if($column == "Crime"){
+		$query .= $column;
+	}
+	else if($column == "Parole_Date"){
+		$query .= $column;
+	}
+	$query .= " FROM inmate";
+	$result = $conn->query($query);
+	if($result->num_rows > 0){
+		echo "<table border= \"1\">";
+		echo "<tr><th> $column</th></tr>";
+		while($row = $result->fetch_assoc()){
+			echo "<tr><td>". $row["$column"]. "</td></tr>";
+		}
+	}
+}
+clearConnection($conn);
+
 $conn->close();
 
 
 ?>
+
